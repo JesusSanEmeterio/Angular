@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2>Lista de Contactos</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contacto of contactos">
+                <td>{{contacto.id}}</td>
+                <td>{{contacto.nombre}}</td>
+                <td>{{contacto.documento}}</td>
+                <td>{{contacto.fechaNacimiento | date : 'yyyy-MM-dd'}}</td>
+                <td>{{contacto.genero}}</td>
+                <td>
+                    <a style="margin-right: 1em;" [routerLink]="'editar/'+contacto.id" class="btn btn-primary">Editar</a>
+                    <button class="btn btn-danger" (click)="eliminar(contacto.id)" >
+                        Eliminar
+                    </button>
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+</div>

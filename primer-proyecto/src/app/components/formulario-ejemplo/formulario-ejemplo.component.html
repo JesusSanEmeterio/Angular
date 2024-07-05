@@ -1,0 +1,11 @@
+<form [formGroup]="form" style="margin: 3em;">
+    <label>Nombre</label>
+    <input type="text" class="form-control" formControlName="nombre"/>
+
+    <label>Apellido</label>
+    <input type="text" class="form-control" formControlName="apellido"/>
+
+    <button class="btn btn-primary" style="margin: 2em;" (click)="submit()">Submit</button>
+
+    <button type="button" class="btn btn-secondary" style="margin: 2em;" (click)="cambiarNombre()">Cambiar Nombre</button>
+</form>
